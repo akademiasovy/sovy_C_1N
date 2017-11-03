@@ -74,6 +74,40 @@ int main()
 	   textSmall[i]=z;  	     
 	}
 	printf("\nSmall text: %s", textSmall); 
+	
+	printf("\nText without digits: ");
+	for(i=0;i<length;i++){
+	   char z=text[i];
+	   if(z>='0' && z<='9')
+	       printf("?");
+	   else
+	       putchar(z);   // alias : printf("%c", z);    
+	}
+	
+	printf("\nCeasar 1 : ");
+	for(i=0;i<length;i++){
+	     char z=text[i];
+	     if(z>='A' && z<='Z'){
+	         z=z+1;
+	         if(z>'Z'){ 
+	              z=z-26;
+	         }
+	      }   
+	    
+		 if(z>='a' && z<='z'){
+	         z=z+1;
+	         if(z>'z'){
+	            z=z-26;
+	         }
+	    }	          
+	     putchar(z);    
+	}
+	
+	// vypise velke pismena miestpo malych, male pismena miesto velkych
+	// a medzery miesti cislic
+	printf("\nSpecial text: ");
+	
+	
 }
 
 
