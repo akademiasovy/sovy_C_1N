@@ -6,12 +6,14 @@
 */
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 
 int main()
 {
     char text[11]; // max is 10 characters + \0
     char textUpper[11];
     char textSmall[11];
+    char textChanged[11];
     printf("Enter text: ");
     scanf("%s",&text);
     printf("\nYour text: %s",text);
@@ -103,10 +105,36 @@ int main()
 	     putchar(z);    
 	}
 	
-	// vypise velke pismena miestpo malych, male pismena miesto velkych
+	// vypise velke pismena miesto malych, male pismena miesto velkych
 	// a medzery miesti cislic
 	printf("\nSpecial text: ");
+	for(i=0;i<length;i++){
+	    char z=text[i];
+	    //if(z>='a' && z<='z')
+	    if(islower(z)>0){
+	        //z=z-32;
+	        z=toupper(z);
+		}
+		else if(isupper(z)>0){
+	        //z=z-32;
+	        z=tolower(z);
+		}
+		
+		putchar(z);
+	    
+	}
 	
+	// vymena dvojic pismen
+	printf("\nChanged letters: ");
+	for(i=0;i<length-1;i=i+2){
+	     textChanged[i]=text[i+1];
+	     textChanged[i+1]=text[i];
+	}
+	textChanged[length]='\0';
+	if(length%2==1){
+	     textChanged[length-1]=text[length-1];
+	}
+	printf("%s", textChanged);	
 	
 }
 
