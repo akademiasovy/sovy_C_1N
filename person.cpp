@@ -4,10 +4,16 @@
 #include<stdlib.h>
 #include<time.h>
 
+typedef struct {
+   char city[20];
+   int pc;
+}address_detail;
+
 typedef struct{
    char name[20];
    int age;
    float salary;
+   address_detail address;
 } person;
 
 int main()
@@ -40,10 +46,19 @@ int main()
 	  
 	  employees[i].age=rand()%33+18;
 	  employees[i].salary=rand()%1000+500;  
+	  int pc=rand()%90000+10000;
+	  employees[i].address.pc=pc;
+	  switch(pc%3){
+	     case 0: strcpy(employees[i].address.city, "Kosice"); break;
+	     case 1: strcpy(employees[i].address.city, "Poprad"); break;
+	     case 2: strcpy(employees[i].address.city, "Michalovce"); break;
+	     default: strcpy(employees[i].address.city, "Horna dolna");
+	  }
    }
    
    for(i=0;i<20;i++){
       printf("\nName: %s, age: %d, salary: %1.2f",employees[i].name, employees[i].age, employees[i].salary);
+      printf("\n\t City & postal code: %s %d",employees[i].address.city, employees[i].address.pc);
    }
    
 }
