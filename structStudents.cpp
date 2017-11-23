@@ -4,6 +4,10 @@
 #include<stdlib.h>
 #include<time.h>
 
+typedef enum  {
+   MALE, FEMALE, OTHER
+}gender ;
+
 typedef struct {
    char city[20];
    int pc;
@@ -11,6 +15,7 @@ typedef struct {
 
 typedef struct{
    char name[20];
+   gender sex;
    int age;
    float salary;
    address_detail address;
@@ -22,7 +27,7 @@ int main()
     
    person student[20];
    strcpy(student[0].name,"Sebastian"); student[0].age=35; student[0].salary=1452; 
-   strcpy(student[0].address.city,"Kosice"); student[0].address.pc=92512;
+   strcpy(student[0].address.city,"Kosice"); student[0].address.pc=92512; student[0].sex=MALE;
    strcpy(student[1].name,"David"); student[1].age=45; student[1].salary=1471; 
    strcpy(student[1].address.city,"Kosice"); student[1].address.pc=04001;
    strcpy(student[2].name,"Filip"); student[2].age=30; student[2].salary=987; 
