@@ -29,10 +29,16 @@ int main(){
      }
     
 	} 
+	
+	FILE *fw;
+	fw=fopen("keno10numbers.data","a");
+	fputc('\n',fw);
      px=p;
      for(index=0;index<N;index++){
          printf("%d ", *px);
+         fprintf(fw,"%d ", *px);
          px++;
 	 }
  
+ 	fclose(fw);
 }
