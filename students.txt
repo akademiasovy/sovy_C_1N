@@ -1,0 +1,7 @@
+6
+David Macko 2 3 1 65.8
+Barbora Niznikova 2 2 2 30.7
+Filip Hudak 1 1 2 15.8
+Roman Haverla 2 1 2 30.9
+Simona Adamkovicova 3 4 2 45.8
+Martin Hurta 1 4 3 90.9
